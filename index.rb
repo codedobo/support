@@ -15,7 +15,6 @@ class SupportModule
     setup
     support_commands
     support
-    notification
     send_message "\u001b[32mSuccessfully started support module!"
   end
 end

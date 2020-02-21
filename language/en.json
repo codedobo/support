@@ -16,7 +16,7 @@
             "delete":"Successfully delete the configuration! :x:"
         },
         "info":{
-            "message":"Current support role: %{r}. \nCurrent channel: <#%{c}>",
+            "message":"Current support role: `%{r}`. \nCurrent channel: <#%{c}>",
             "null":"You do not have setup this!"
         },
         "nopermission":"No permission, sorry",
