@@ -1,9 +1,11 @@
 {
+    "event":{
+        "notonline":":sleeping_accommodation: Sorry, no supporter is online :sleeping_accommodation:"
+    },
     "commands":{
-        
         "help":{
             "title":"Support module help",
-            "description":"`support` \nGet the info \n`support set <Chat> <Role>` \nAdd a new support chat! \n`support set` \nRemove a support chat",
+            "description":"`support` \nGet the info \n`support set <Role> <Chat>` \nAdd a new support chat! \n`support set` \nRemove a support chat",
             "color":15417396
         },
         "set":{

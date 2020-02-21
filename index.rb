@@ -2,6 +2,7 @@
 
 require_relative './user-commands.rb'
 require_relative './setup.rb'
+require_relative './supportchat.rb'
 class SupportModule
   include CodeDoBo::BotModule
 
@@ -13,6 +14,7 @@ class SupportModule
     @language = CodeDoBo::Language.new(module_manager.client, __dir__ + '/language')
     setup
     support_commands
+    support
     send_message "\u001b[32mSuccessfully started support module!"
   end
 end

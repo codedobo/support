@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative './index.rb'
-puts 'TEFCIofep'
 class SupportModule
   def support_commands
     @app_class.register_user_cmd(:support, ['support', 'sup', 'spprt', 'supp']) do |_command, args, event|
@@ -11,7 +10,7 @@ class SupportModule
       end
       if args.length == 0
         results = @client.query("SELECT * FROM `support` WHERE SERVERID='#{event.server.id}';")
-        if results != 1
+        if results.size != 1
           event.send_message @language.get_json(event.server.id)['commands']['info']['null']
         else
           event.send_message format(@language.get_json(event.server.id)['commands']['info']['message'], r: results.first['ROLE'], c: results.first['CHANNEL'])
