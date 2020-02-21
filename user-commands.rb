@@ -5,7 +5,7 @@ puts 'TEFCIofep'
 class SupportModule
   def support_commands
     @app_class.register_user_cmd(:support, ['support', 'sup', 'spprt', 'supp']) do |_command, args, event|
-      if event.author.permission? :manage_server
+      unless event.author.permission? :manage_server
         event.send_message @language.get_json(event.server.id)['commands']['nopermission']
         return
       end
