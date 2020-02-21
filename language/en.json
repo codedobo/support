@@ -1,6 +1,7 @@
 {
     "event":{
-        "notonline":":sleeping_accommodation: Sorry, no supporter is online :sleeping_accommodation:"
+        "notonline":":sleeping_accommodation: Sorry, no supporter is online :sleeping_accommodation:",
+        "online":":smile:  %{u} is now online!"
     },
     "commands":{
         "help":{
