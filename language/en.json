@@ -1,0 +1,22 @@
+{
+    "commands":{
+        
+        "help":{
+            "title":"Support module help",
+            "description":"`support` \nGet the info \n`support set <Chat> <Role>` \nAdd a new support chat! \n`support set` \nRemove a support chat",
+            "color":15417396
+        },
+        "set":{
+            "usage":"Wrong usage of `set`. Use `module SupportModule` to see the help!",
+            "invalid":"The input is invalid!",
+            "success":"Successfully set the configuration! :ballot_box_with_check:",
+            "delete":"Successfully delete the configuration! :x:"
+        },
+        "info":{
+            "message":"Current support role: %{r}. \nCurrent channel: <#%{c}>",
+            "null":"You do not have setup this!"
+        },
+        "nopermission":"No permission, sorry",
+        "usage":"Wrong usage. Use `module SupportModule` to see the help!"
+    }
+}
