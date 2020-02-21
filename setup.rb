@@ -16,8 +16,6 @@ class SupportModule
   def join(server, _already)
     send_message "\u001b[96mSet up support module for #{server.id}..."
     id = server.id
-    theme = 'default'
-    @client.query("INSERT INTO `support` VALUES (#{id},'#{theme}',NULL) ON DUPLICATE KEY UPDATE THEME='#{theme}';")
     send_message "\u001b[32mSuccessfully set up support module for #{server.id}!"
   end
 
