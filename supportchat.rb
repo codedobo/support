@@ -18,7 +18,7 @@ class SupportModule
     @app_class.module_manager.bot.discord.presence do |event|
         results = @client.query("SELECT * FROM `support` WHERE SERVERID='#{event.server.id}';")
         if (!event.user.bot_account? && event.status == :online && results.size == 1 && event.user.on(event.server).role?(results.first['ROLE']))
-            event.bot.send_message(results.first['CHANNEL'], format(@language.get_json(event.server.id)['event']['online'], u: event.user.mention))
+            event.bot.send_message(results.first['CHANNEL'], format(@language.get_json(event.server.id)['event']['online'], u: event.user.name))
         end
     end
   end
