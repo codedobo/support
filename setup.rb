@@ -2,16 +2,6 @@
 
 require_relative './index.rb'
 class SupportModule
-  def setup
-    send_message "\u001b[96mSet up up support module..."
-    @client.query("CREATE TABLE IF NOT EXISTS `support` (
-      `SERVERID` bigint(255) NOT NULL,
-      `CHANNEL` bigint(255) NOT NULL,
-      `ROLE` bigint(255) NOT NULL,
-      PRIMARY KEY  (`SERVERID`)
-    );")
-    send_message "\u001b[32mSuccessfully set up support module!"
-  end
 
   def join(server, _already)
     send_message "\u001b[96mSet up support module for #{server.id}..."
