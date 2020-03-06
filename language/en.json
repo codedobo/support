@@ -9,15 +9,28 @@
             "description":"`support` \nGet the info \n`support set <Role> <Chat>` \nAdd a new support chat! \n`support set` \nRemove a support chat",
             "color":15417396
         },
-        "set":{
-            "usage":"Wrong usage of `set`. Use `module SupportModule` to see the help!",
+        "role":{
+            "usage":"Wrong usage of `role`. Use `module SupportModule` to see the help!",
             "invalid":"The input is invalid!",
-            "success":"Successfully set the configuration! :ballot_box_with_check:",
-            "delete":"Successfully delete the configuration! :x:"
+            "success":"Successfully set the role! :ballot_box_with_check:",
+            "delete":"Successfully delete the role! :x:"
+        },
+        "chat":{
+            "usage":"Wrong usage of `chat`. Use `module SupportModule` to see the help!",
+            "invalid":"The input is invalid!",
+            "success":"Successfully set the chat! :ballot_box_with_check:",
+            "delete":"Successfully delete the chat! :x:"
+        },
+        "notification":{
+            "usage":"Wrong usage of `notification`. Use `module SupportModule` to see the help!",
+            "invalid":"The input is invalid!",
+            "success":"Successfully set the notification! :ballot_box_with_check:",
+            "delete":"Successfully delete the notification! :x:"
         },
         "info":{
-            "message":"Current support role: `%{r}`. \nCurrent channel: <#%{c}>",
-            "null":"You do not have setup this!"
+            "message":"Current support role: `%{r}`. \nCurrent channels: `<#%{c}>`",
+            "channels":">`, `<#",
+            "roles":"`, `"
         },
         "nopermission":"No permission, sorry",
         "usage":"Wrong usage. Use `module SupportModule` to see the help!"
