@@ -11,7 +11,6 @@ class SupportModule
 
   def reload(server)
     send_message "\u001b[96mReloading support module for server #{server.name}(#{server.id})..."
-    match_making
     send_message "\u001b[32mSuccefully reloaded the support module for the server!"
   end
 end
