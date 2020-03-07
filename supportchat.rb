@@ -19,7 +19,7 @@ class SupportModule
   def notification
     @module_manager.bot.discord.presence do |event|
       member = event.server.member(event.user.id)
-      if !event.user.bot_account? && event.status == :online && !@client[:support_roles].where(server_id: event.server.id).select do |row|
+      if !event.user.bot_account? && event.status == :online && !@client[:support_roles].where(server_id: event.server.id).all.select do |row|
         member.role?(row[:role])
       end.empty?
         @client[:support_notifications].where(server_id: event.server.id).each do |row|
