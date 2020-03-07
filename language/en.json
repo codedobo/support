@@ -6,7 +6,7 @@
     "commands":{
         "help":{
             "title":"Support module help",
-            "description":"`support` \nGet the info \n`support set <Role> <Chat>` \nAdd a new support chat! \n`support set` \nRemove a support chat",
+            "description":"`support` \nGet the info \n\n`support role` \nGet all support roles \n\n`support role add <Role>` \nAdd a new support role! \n\n`support role remove <Role>` \nRemove a support role! \n\n`support chat` \nGet all support chats \n\n`support chat add <Chat>` \nAdd a new support chat! \n\n`support chat remove <Chat>` \nRemove a support chat!",
             "color":15417396
         },
         "role":{

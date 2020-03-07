@@ -10,10 +10,11 @@ class SupportModule
       end
       if args.length == 0
         event.channel.send_embed do |embed|
-          embed.title = 'Test'
+          embed.title = @language.get_json(event.server.id)['commands']['help']['title']
+          embed.description = @language.get_json(event.server.id)['commands']['help']['description']
         end
       elsif args.length == 1 || args.length == 3
-        if args[0] == 'set'
+        if args[0].casecmp('role').zero?
           if args.length == 3
             channel = event.bot.channel(args[2].to_i, event.server)
             if channel && channel.server.id == event.server.id
@@ -26,6 +27,8 @@ class SupportModule
             @client.query("DELETE FROM `support` WHERE SERVERID=#{event.server.id};")
             event.send_message @language.get_json(event.server.id)['commands']['set']['delete']
           end
+        elsif args[1].casecmp('chat').zero?
+
         else
           event.send_message @language.get_json(event.server.id)['commands']['set']['usage']
         end

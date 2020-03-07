@@ -21,7 +21,7 @@ class SupportModule
       if !event.user.bot_account? && event.status == :online && results.size == 1 && event.user.on(event.server).role?(results.first['ROLE'])
         event.bot.channel(results.first['CHANNEL']).send_embed do |embed|
           embed.title = @language.get_json(event.server.id)['event']['online']['title']
-          embed << format(@language.get_json(event.server.id)['event']['online']['body'], event.user.name)
+          embed.description = format(@language.get_json(event.server.id)['event']['online']['body'], event.user.name)
         end
       end
     end
