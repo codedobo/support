@@ -16,8 +16,8 @@
             "delete":"Successfully delete the role! :x:",
             "information":{
                 "title":"Support roles",
-                "description":"The current support roles are: \n`%{r} `",
-                "delimiter":"`\n `"
+                "description":"The current support roles are: \n%{r}",
+                "delimiter":"\n "
             }
         },
         "chat":{
@@ -27,8 +27,8 @@
             "delete":"Successfully delete the chat! :x:",
             "information":{
                 "title":"Support chats",
-                "description":"The current support chats are: \n`%{r} `",
-                "delimiter":"`\n `"
+                "description":"The current support chats are: \n%{c}",
+                "delimiter":"\n "
             }
         },
         "notification":{

@@ -31,7 +31,7 @@ class SupportModule
     if args.length <= 1
       event.channel.send_embed do |embed|
         embed.title = language['information']['title']
-        roles = @client[:support_roles].where(server_id: event.server.id).map { |h| h[:role] }.join(language['information']['delimiter'])
+        roles = @client[:support_roles].where(server_id: event.server.id).map { |h| event.server.role(h[:role]).mention }.join(language['information']['delimiter'])
         embed.description = format(language['information']['description'], r: roles)
       end
     elsif args[1].casecmp('add').zero?
@@ -48,6 +48,37 @@ class SupportModule
     elsif args[1].casecmp('remove').zero?
       if args.length == 3
         @client[:support_roles].where(server_id: event.server.id, role: args[2]).delete
+        event.send_message language['delete']
+      else
+        event.send_message language['usage']
+      end
+    else
+      event.send_message language['usage']
+    end
+  end
+
+  def chat_subcommand(args, event)
+    language = @language.get_json(event.server.id)['commands']['chat']
+    if args.length <= 1
+      event.channel.send_embed do |embed|
+        embed.title = language['information']['title']
+        chats = @client[:support_chats].where(server_id: event.server.id).map { |h| @module_manager.bot.discord.channel(h[:chat]).mention }.join(language['information']['delimiter'])
+        embed.description = format(language['information']['description'], c: chats)
+      end
+    elsif args[1].casecmp('add').zero?
+      if args.length == 3
+        if @module_manager.bot.discord.channel(args[2], event.server.id) && @client[:support_chats].first(server_id: event.server.id, chat: args[2]).nil?
+          @client[:support_chats].insert(server_id: event.server.id, chat: args[2])
+          event.send_message language['success']
+        else
+          event.send_message language['invalid']
+        end
+      else
+        event.send_message language['usage']
+      end
+    elsif args[1].casecmp('remove').zero?
+      if args.length == 3
+        @client[:support_chats].where(server_id: event.server.id, chat: args[2]).delete
         event.send_message language['delete']
       else
         event.send_message language['usage']
