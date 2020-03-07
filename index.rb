@@ -12,6 +12,7 @@ class SupportModule
     @module_manager = module_manager
     @app_class = app_class
     @language = CodeDoBo::Language.new(module_manager.client, __dir__ + '/language')
+    setup
     support_commands
     support
     notification

@@ -13,4 +13,15 @@ class SupportModule
     send_message "\u001b[96mReloading support module for server #{server.name}(#{server.id})..."
     send_message "\u001b[32mSuccefully reloaded the support module for the server!"
   end
+
+  def setup
+    @client.create_table? :support_chats do
+        Bignum :server_id, unique: true
+        Bignum :chat
+    end
+    @client.create_table? :support_roles do
+        Bignum :server_id, unique: true
+        Bignum :role
+    end
+  end
 end

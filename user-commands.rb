@@ -9,11 +9,8 @@ class SupportModule
         return
       end
       if args.length == 0
-        results = @client.query("SELECT * FROM `support` WHERE SERVERID='#{event.server.id}';")
-        if results.size != 1
-          event.send_message @language.get_json(event.server.id)['commands']['info']['null']
-        else
-          event.send_message format(@language.get_json(event.server.id)['commands']['info']['message'], r: results.first['ROLE'], c: results.first['CHANNEL'])
+        event.channel.send_embed do |embed|
+          embed.title = 'Test'
         end
       elsif args.length == 1 || args.length == 3
         if args[0] == 'set'
