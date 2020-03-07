@@ -20,7 +20,7 @@ class SupportModule
     notification_cooldown = []
     @module_manager.bot.discord.presence do |event|
       member = event.server.member(event.user.id)
-      if !event.user.bot_account? && event.status == :online && !notification_cooldown.include? event.user.id && !@client[:support_roles].where(server_id: event.server.id).all.select do |row|
+      if !event.user.bot_account? && event.status == :online && !notification_cooldown.include?(event.user.id) && !@client[:support_roles].where(server_id: event.server.id).all.select do |row|
         member.role?(row[:role])
       end.empty?
         @client[:support_notifications].where(server_id: event.server.id).each do |row|
