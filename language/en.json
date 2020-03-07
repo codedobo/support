@@ -12,14 +12,24 @@
         "role":{
             "usage":"Wrong usage of `role`. Use `module SupportModule` to see the help!",
             "invalid":"The input is invalid!",
-            "success":"Successfully set the role! :ballot_box_with_check:",
-            "delete":"Successfully delete the role! :x:"
+            "success":"Successfully add the role! :ballot_box_with_check:",
+            "delete":"Successfully delete the role! :x:",
+            "information":{
+                "title":"Support roles",
+                "description":"The current support roles are: \n`%{r} `",
+                "delimiter":"`\n `"
+            }
         },
         "chat":{
             "usage":"Wrong usage of `chat`. Use `module SupportModule` to see the help!",
             "invalid":"The input is invalid!",
-            "success":"Successfully set the chat! :ballot_box_with_check:",
-            "delete":"Successfully delete the chat! :x:"
+            "success":"Successfully add the chat! :ballot_box_with_check:",
+            "delete":"Successfully delete the chat! :x:",
+            "information":{
+                "title":"Support chats",
+                "description":"The current support chats are: \n`%{r} `",
+                "delimiter":"`\n `"
+            }
         },
         "notification":{
             "usage":"Wrong usage of `notification`. Use `module SupportModule` to see the help!",
@@ -28,9 +38,9 @@
             "delete":"Successfully delete the notification! :x:"
         },
         "info":{
-            "message":"Current support role: `%{r}`. \nCurrent channels: `<#%{c}>`",
-            "channels":">`, `<#",
-            "roles":"`, `"
+            "message":"Current support roles: `%{r}`. \nCurrent channels: `<#%{c}> `",
+            "channels":">`\n `<#",
+            "roles":"`\n `"
         },
         "nopermission":"No permission, sorry",
         "usage":"Wrong usage. Use `module SupportModule` to see the help!"

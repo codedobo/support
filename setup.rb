@@ -16,11 +16,11 @@ class SupportModule
 
   def setup
     @client.create_table? :support_chats do
-        Bignum :server_id, unique: true
+        Bignum :server_id
         Bignum :chat
     end
     @client.create_table? :support_roles do
-        Bignum :server_id, unique: true
+        Bignum :server_id
         Bignum :role
     end
   end
