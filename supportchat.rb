@@ -32,7 +32,7 @@ class SupportModule
         end
         notification_cooldown << event.user.id
         Thread.new do
-          sleep(60 * 10)
+          sleep(60 * 30)
           notification_cooldown.delete event.user.id
         end
       end
