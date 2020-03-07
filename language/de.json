@@ -1,0 +1,57 @@
+{
+    "event":{
+        "notonline":":sleeping_accommodation: Sorry, kein Supporter ist online :sleeping_accommodation:",
+        "online":{
+            "title": "Supporterstatus aktualisiert!",
+            "body":":smile: %{u} ist nun online für Support!",
+            "color": 7197696
+        }
+    },
+    "commands":{
+        "help":{
+            "title":"Supportmodul Hilfe",
+            "description":"`support` \nBekomme die Hilfe \n\n`support role` \nListe alle Supportrollen auf \n\n`support role add <Role>` \nFüge eine neue Supportrolle hinzu! \n\n`support role remove <Role>` \nLösche eine Supportrolle! \n\n`support chat` \nListe alle Supportchats auf \n\n`support chat add <Chat>` \nFüge ein neuen Supportchat hinzu! \n\n`support chat remove <Chat>` \nLösche ein Supportchat! \n\n`support notification` \nListe alle Benachrichtigungschats auf \n\n`support notification add <Chat>` \nFüge ein neuer Benachrichtigungschat hinzu! \n\n`support notification remove <Chat>` \nLösche ein Benachrichtigungschat!",
+            "color":15417396
+        },
+        "role":{
+            "usage":"Falsche Benutzung von `role`. Benutze `module SupportModule` um die Hilfe zu sehen!",
+            "invalid":"Die Eingabe ist ungültig!",
+            "success":"Erfolgreich neue Rolle hinzugefügt! :ballot_box_with_check:",
+            "delete":"Erfolgreich Rolle gelöscht! :x:",
+            "information":{
+                "title":"Supportrollen",
+                "description":"Derzeitige Supportrollen sind: \n%{r}",
+                "delimiter":"\n "
+            }
+        },
+        "chat":{
+            "usage":"Falsche Benutzung von `chat`. Benutze `module SupportModule` um die Hilfe zu sehen!",
+            "invalid":"Die Eingabe ist ungültig!",
+            "success":"Erfolgreich neuer Chat hinzugefügt! :ballot_box_with_check:",
+            "delete":"Erfolgreich Chat gelöscht! :x:",
+            "information":{
+                "title":"Supportchats",
+                "description":"Die derzeitigen Supportchats sind: \n%{c}",
+                "delimiter":"\n "
+            }
+        },
+        "notifications":{
+            "usage":"Falsche Benutzung von `notification`. Benutze `module SupportModule` um die Hilfe zu sehen!",
+            "invalid":"Die Eingabe ist ungültig!",
+            "success":"Erfolgreich neuer Benachrichtigungschat hinzugefügt! :ballot_box_with_check:",
+            "delete":"Erfolgreich Benachrichtigungschat gelöscht! :x:",
+            "information":{
+                "title":"Supportbenachrichtigungschats",
+                "description":"Die derzeitigen Supportbenachrichtigungschats sind: \n%{c}",
+                "delimiter":"\n "
+            }
+        },
+        "info":{
+            "message":"Current support roles: `%{r}`. \nCurrent channels: `<#%{c}> `",
+            "channels":">`\n `<#",
+            "roles":"`\n `"
+        },
+        "nopermission":"Keine Rechte, sorry",
+        "usage":"Falsche Benutzung. Benutze `module SupportModule` um die Hilfe zu sehen!"
+    }
+}

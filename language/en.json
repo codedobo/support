@@ -41,7 +41,7 @@
             "success":"Successfully add the notification chat! :ballot_box_with_check:",
             "delete":"Successfully delete the notification chat! :x:",
             "information":{
-                "title":"Support chats",
+                "title":"Support notification chats",
                 "description":"The current support notification chats are: \n%{c}",
                 "delimiter":"\n "
             }
