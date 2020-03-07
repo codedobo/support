@@ -26,6 +26,7 @@ class SupportModule
         @client[:support_notifications].where(server_id: event.server.id).each do |row|
           event.bot.channel(row[:chat]).send_embed do |embed|
             embed.title = @language.get_json(event.server.id)['event']['online']['title']
+            embed.color = @language.get_json(event.server.id)['event']['online']['color']
             embed.description = format(@language.get_json(event.server.id)['event']['online']['body'], u: event.user.mention)
           end
         end
