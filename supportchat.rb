@@ -18,17 +18,14 @@ class SupportModule
 
   def notification
     @module_manager.bot.discord.presence do |event|
-      puts 'test'
       member = event.server.member(event.user.id)
       if !event.user.bot_account? && event.status == :online && !@client[:support_roles].where(server_id: event.server.id).each do |row|
-        puts 'ufeia:' + row[:role].to_s
         member.role?(row[:role])
       end.empty?
-        puts '1rjoefihjapioefjo'
         @client[:support_notifications].where(server_id: event.server.id).each do |row|
           event.bot.channel(row[:chat]).send_embed do |embed|
             embed.title = @language.get_json(event.server.id)['event']['online']['title']
-            embed.description = format(@language.get_json(event.server.id)['event']['online']['body'], u: event.user.name.mention)
+            embed.description = format(@language.get_json(event.server.id)['event']['online']['body'], u: event.user.mention)
           end
         end
       end
