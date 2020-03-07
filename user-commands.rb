@@ -17,6 +17,8 @@ class SupportModule
           role_subcommand(args, event)
         elsif args[0].casecmp('chat').zero?
           chat_subcommand(args, event)
+        elsif args[0].casecmp('notification').zero?
+          notification_subcommand(args, event)
         else
           event.send_message language['usage']
         end
@@ -79,6 +81,37 @@ class SupportModule
     elsif args[1].casecmp('remove').zero?
       if args.length == 3
         @client[:support_chats].where(server_id: event.server.id, chat: args[2]).delete
+        event.send_message language['delete']
+      else
+        event.send_message language['usage']
+      end
+    else
+      event.send_message language['usage']
+    end
+  end
+
+  def notification_subcommand(args, event)
+    language = @language.get_json(event.server.id)['commands']['notifications']
+    if args.length <= 1
+      event.channel.send_embed do |embed|
+        embed.title = language['information']['title']
+        chats = @client[:support_notifications].where(server_id: event.server.id).map { |h| @module_manager.bot.discord.channel(h[:chat]).mention }.join(language['information']['delimiter'])
+        embed.description = format(language['information']['description'], c: chats)
+      end
+    elsif args[1].casecmp('add').zero?
+      if args.length == 3
+        if @module_manager.bot.discord.channel(args[2], event.server.id) && @client[:support_notifications].first(server_id: event.server.id, chat: args[2]).nil?
+          @client[:support_notifications].insert(server_id: event.server.id, chat: args[2])
+          event.send_message language['success']
+        else
+          event.send_message language['invalid']
+        end
+      else
+        event.send_message language['usage']
+      end
+    elsif args[1].casecmp('remove').zero?
+      if args.length == 3
+        @client[:support_notifications].where(server_id: event.server.id, chat: args[2]).delete
         event.send_message language['delete']
       else
         event.send_message language['usage']

@@ -1,12 +1,15 @@
 {
     "event":{
         "notonline":":sleeping_accommodation: Sorry, no supporter is online :sleeping_accommodation:",
-        "online":":smile: <@%{u}> is now online for support!"
+        "online":{
+            "title": "Supporter status updated!",
+            "body":":smile: %{u} is now online for support!"
+        }
     },
     "commands":{
         "help":{
             "title":"Support module help",
-            "description":"`support` \nGet the info \n\n`support role` \nGet all support roles \n\n`support role add <Role>` \nAdd a new support role! \n\n`support role remove <Role>` \nRemove a support role! \n\n`support chat` \nGet all support chats \n\n`support chat add <Chat>` \nAdd a new support chat! \n\n`support chat remove <Chat>` \nRemove a support chat!",
+            "description":"`support` \nGet the info \n\n`support role` \nGet all support roles \n\n`support role add <Role>` \nAdd a new support role! \n\n`support role remove <Role>` \nRemove a support role! \n\n`support chat` \nGet all support chats \n\n`support chat add <Chat>` \nAdd a new support chat! \n\n`support chat remove <Chat>` \nRemove a support chat! \n\n`support notification` \nGet all support notification chats \n\n`support notification add <Chat>` \nAdd a new support notification chat! \n\n`support notification remove <Chat>` \nRemove a support notification chat!",
             "color":15417396
         },
         "role":{
@@ -31,11 +34,16 @@
                 "delimiter":"\n "
             }
         },
-        "notification":{
+        "notifications":{
             "usage":"Wrong usage of `notification`. Use `module SupportModule` to see the help!",
             "invalid":"The input is invalid!",
-            "success":"Successfully set the notification! :ballot_box_with_check:",
-            "delete":"Successfully delete the notification! :x:"
+            "success":"Successfully add the notification chat! :ballot_box_with_check:",
+            "delete":"Successfully delete the notification chat! :x:",
+            "information":{
+                "title":"Support chats",
+                "description":"The current support notification chats are: \n%{c}",
+                "delimiter":"\n "
+            }
         },
         "info":{
             "message":"Current support roles: `%{r}`. \nCurrent channels: `<#%{c}> `",

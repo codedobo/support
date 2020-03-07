@@ -2,7 +2,6 @@
 
 require_relative './index.rb'
 class SupportModule
-
   def join(server, _already)
     send_message "\u001b[96mSet up support module for #{server.id}..."
     id = server.id
@@ -16,12 +15,16 @@ class SupportModule
 
   def setup
     @client.create_table? :support_chats do
-        Bignum :server_id
-        Bignum :chat
+      Bignum :server_id
+      Bignum :chat
     end
     @client.create_table? :support_roles do
-        Bignum :server_id
-        Bignum :role
+      Bignum :server_id
+      Bignum :role
+    end
+    @client.create_table? :support_notifications do
+      Bignum :server_id
+      Bignum :chat
     end
   end
 end
