@@ -3,7 +3,7 @@
         "notonline":":sleeping_accommodation: Sorry, kein Supporter ist online :sleeping_accommodation:",
         "online":{
             "title": "Supporterstatus aktualisiert!",
-            "body":":smile: %{u} ist nun online für Support!",
+            "body":":smile: %{u} ist nun für den Support online!",
             "color": 7197696
         }
     },
