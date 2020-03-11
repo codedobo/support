@@ -2,7 +2,7 @@
     "event":{
         "notonline":":sleeping_accommodation: Sorry, no supporter is online :sleeping_accommodation:",
         "online":{
-            "title": "Supporter status updated!",
+            "title": "%{u} updated his/her status!",
             "body":":smile: %{u} is now online for support!",
             "color": 7197696
         }
